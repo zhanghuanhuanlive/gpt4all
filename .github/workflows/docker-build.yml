@@ -29,6 +29,6 @@ jobs:
         context: ./gpt4all-api/gpt4all_api
         file: ./gpt4all-api/gpt4all_api/Dockerfile.buildkit
         push: true
-        tags: ${{ secrets.DOCKERHUB_USERNAME }}/gpt4all:latest
+        tags: ${{ secrets.DOCKERHUB_USERNAME }}/gpt4all_api:latest
         build-args:  |
           BUILDKIT_INLINE_CACHE: 1
