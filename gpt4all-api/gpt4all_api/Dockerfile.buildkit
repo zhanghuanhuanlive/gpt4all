@@ -2,7 +2,7 @@
 FROM tiangolo/uvicorn-gunicorn:python3.11
 
 # Put first so anytime this file changes other cached layers are invalidated.
-COPY /gpt4all_api/gpt4all_api/requirements.txt /requirements.txt
+COPY gpt4all_api/gpt4all_api/requirements.txt /requirements.txt
 
 RUN pip install --upgrade pip
 
@@ -11,7 +11,7 @@ RUN --mount=type=ssh pip install -r /requirements.txt && \
   rm -Rf /root/.cache && rm -Rf /tmp/pip-install*
 
 # Finally, copy app and client.
-COPY /gpt4all_api/gpt4all_api/app /app
+COPY gpt4all_api/gpt4all_api/app /app
 
 RUN mkdir -p /models
 
