@@ -7,7 +7,8 @@ COPY gpt4all_api/gpt4all_api/requirements.txt /requirements.txt
 RUN pip install --upgrade pip
 
 # Run various pip install commands with ssh keys from host machine.
-RUN --mount=type=ssh pip install -r /requirements.txt && \
+# --mount=type=ssh
+RUN pip install -r /requirements.txt && \
   rm -Rf /root/.cache && rm -Rf /tmp/pip-install*
 
 # Finally, copy app and client.
