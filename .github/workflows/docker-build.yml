@@ -27,7 +27,7 @@ jobs:
       uses: docker/build-push-action@v2
       with:
         context: ./gpt4all-api/gpt4all_api
-        file: ./Dockerfile.buildkit
+        file: Dockerfile.buildkit
         push: true
         tags: ${{ secrets.DOCKERHUB_USERNAME }}/gpt4all:latest
         build-args:  |
