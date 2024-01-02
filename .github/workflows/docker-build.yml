@@ -26,8 +26,8 @@ jobs:
     - name: Build and push Docker image
       uses: docker/build-push-action@v2
       with:
-        context: .
-        file: ./gpt4all-api/gpt4all_api/Dockerfile.buildkit
+        context: ./gpt4all_api/gpt4all_api
+        file: ./Dockerfile.buildkit
         push: true
         tags: ${{ secrets.DOCKERHUB_USERNAME }}/gpt4all:latest
         build-args:  |
